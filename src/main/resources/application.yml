@@ -1,0 +1,40 @@
+info:
+  name: City List
+  description: An enterprise-grade CityList application
+  version: "@project.version@"
+
+springdoc:
+  swagger-ui:
+    use-root-path: false
+  packagesToScan: com.helmes
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/test
+    username: test
+    password: test
+  jpa:
+    properties:
+      hibernate:
+        jdbc.batch_size: 50
+        order_inserts: true
+
+city-list:
+  security:
+    permitted-paths:
+      - /
+      - /swagger-ui.html
+      - /swagger-ui/**
+      - /v3/api-docs/**
+      - /actuator/**
+      - /static/**
+      - /manifest.json
+      - /logo192.png
+      - /favicon.ico
+    clients:
+      - client-id: 'edit_user'
+        client-secret: 'demo'
+        roles:
+          - ROLE_ALLOW_EDIT
+      - client-id: 'readonly_user'
+        client-secret: 'demo'

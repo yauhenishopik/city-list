@@ -1,0 +1,14 @@
+databaseChangeLog:
+  - changeSet:
+      id: 002_1
+      author: eugene.shopik
+      changes:
+        - createTable:
+            tableName: initial_data
+            columns:
+              - column:
+                  name: id
+                  type: varchar
+                  constraints:
+                    primaryKey: true
+                    nullable: false

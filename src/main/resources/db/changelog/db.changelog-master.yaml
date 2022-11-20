@@ -1,0 +1,5 @@
+databaseChangeLog:
+  - include:
+      file: db/changelog/migrations/001-add-city-table.yaml
+  - include:
+      file: db/changelog/migrations/002-add-initial-data-table.yaml
